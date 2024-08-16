@@ -1,9 +1,9 @@
 import React from 'react'
 import Wallet from '../Wallet/Wallet'
-
+import './wallets.css';
 export default function Wallets({walletsList}) {
   return (
-    <div>
+    <div className='wallets-wrapper'>
       {
                 walletsList.map((value,key)=>(
                     

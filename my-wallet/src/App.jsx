@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './App.css';
 import nacl from "tweetnacl";
 import { generateMnemonic, mnemonicToSeedSync } from "bip39";
 import bs58 from 'bs58';
@@ -30,12 +31,13 @@ function App() {
   }
 
   return (
-    <div>
+    <div class="app-wrapper">
+        <h1 className='wallet-heading'>wallet</h1>
         <Wallets walletsList={walletsList}>
 
         </Wallets>
         
-        <button onClick={addWallet}>
+        <button className="add-wallet" onClick={addWallet}>
             add wallet
         </button>
     </div>

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
-
+import Key from '../Key/Key';
+import './wallet.css';
 export default function Wallet({value,index}) {
   const [balance,setBalance] =useState(0);
+  console.log(`https://solana-mainnet.g.alchemy.com/v2/${import.meta.env.VITE_APP_API_KEY}`);
   useEffect( ()=>{
     
       async function fetchData(){
@@ -14,7 +16,7 @@ export default function Wallet({value,index}) {
           value[0]
           ]
         }
-        const response=await fetch("https://solana-mainnet.g.alchemy.com/v2/81CXWBI9avABQ-yl46bQVf1PvzRh8FU_", {
+        const response=await fetch(`https://solana-mainnet.g.alchemy.com/v2/${import.meta.env.VITE_APP_API_KEY}`, {
           method: 'POST', // Specify the request method
           headers: {
             'Content-Type': 'application/json' // Set the content type to JSON
@@ -32,16 +34,15 @@ export default function Wallet({value,index}) {
   });
   
   return (
-    <div>
+    <div className='wallet-wrapper'>
+      <p>wallet {index}</p>
       <p>
         balance:{balance}
       </p>
-      <p>wallet {index}</p>
-      Public Key : {value[0]}
-      <br>
-      </br>
-      Private Key : {value[1]}    
-
+      <p>public key </p> 
+      <Key  value={value[0]}></Key> 
+      <p>private key</p>
+      <Key  value={value[1]}></Key>
     </div>
   )
 }
