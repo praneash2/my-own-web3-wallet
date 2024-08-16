@@ -7,3 +7,16 @@
     padding: 30px;
     border-radius: 10px;
 }
+
+.send{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: 0px;
+    background-color: rgb(242, 213, 141);
+}
+
+.wallet-type{
+    font-size: 30px;
+}
